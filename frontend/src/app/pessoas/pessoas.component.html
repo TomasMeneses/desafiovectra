@@ -1,0 +1,84 @@
+<div>
+
+  <nav>
+    <div class="nav-wrapper blue darken-1">
+      <a href="#" class="brand-logo center">Pessoas Front</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    
+    <form #f="ngForm" (ngSubmit)="cadastrar(f.value)">
+
+        <label>Nome</label>
+        <input type="text" placeholder="Nome" [ngModel]="pessoa.nome" name="nome">
+        <label>CPF</label>
+        <input type="text" placeholder="CPF" [ngModel]="pessoa.cpf" name="cpf" (blur)="testaCpf(f.value.cpf)" id="cpf" >
+        <label>Idade</label>
+        <input type="number" placeholder="Idade" [ngModel]="pessoa.idade" name="idade">
+        <label>Peso ( Em kg )</label>
+        <input type="number" placeholder="Peso ( Em kg )" [ngModel]="pessoa.peso" name="peso">
+        <label>Altura (Em metros )</label>
+        <input type="number" placeholder="Altura ( Em metros )" [ngModel]="pessoa.altura" name="altura" (blur)="calculaImc(f.value)">
+        <label>IMC</label>
+        <input type="number" placeholder="IMC" [ngModel]="pessoa.imc" name="imc" readonly="true">
+
+        <button *ngIf="testaCpf(f.value.cpf)" class="waves-effect waves-light btn-small">Salvar<i class="material-icons left">save</i></button>
+        <div class="alert" *ngIf="!testaCpf(f.value.cpf)  ">
+            <span class="closebtn">&times;</span> 
+            Preencha com um CPF válido!
+        </div>
+             
+    </form>
+
+    <form #frm="ngForm" (ngSubmit)="listarCpf(frm.value)">
+        <label>Busca por CPF</label>
+        <input type="text" placeholder="Digite o CPF que deseja buscar" [ngModel]="pessoaBusca.cpfBusca" name="cpfBusca">
+
+        <button class="waves-effect waves-light btn-small">BUSCAR<i class="material-icons left">search</i></button>
+    </form>
+
+    <table id="tabela">
+
+      <thead>
+
+        <tr>
+          <th>NOME</th>
+          <th>CPF</th>
+          <th>IDADE</th>
+          <th>PESO</th>
+          <th>ALTURA</th>
+          <th>IMC</th>
+        </tr>
+
+      </thead>
+
+      <tbody id="tbody">
+
+        <tr *ngFor="let pessoa of pessoas" :key="pessoa.id">
+
+          <td>{{pessoa.nome}}</td>
+          <td>{{pessoa.cpf}}</td>
+          <td>{{pessoa.idade}}</td>
+          <td>{{pessoa.peso}}</td>
+          <td>{{pessoa.altura}}</td>
+          <td>{{pessoa.imc}}</td>
+          <td>
+            <button (click)="apagar(pessoa)" class="waves-effect btn-small red darken-1"><i class="material-icons">delete_sweep</i></button>
+          </td>
+
+        </tr>
+
+      </tbody>
+    
+    </table>
+    
+  </div>
+
+   <!-- Compiled and minified CSS -->
+   
+
+   <!-- Compiled and minified JavaScript -->
+   
+
+</div>
