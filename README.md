@@ -12,7 +12,8 @@
 
 <h2>Instruções para execução do projeto</h2>
 
-<h2>Acesse a pasta backend e execute o comando npm install no seu terminal</h2>
+<h3>Acesse a pasta backend e execute o comando npm install no seu terminal</h3>
+<h3>Acesse a pasta frontend e execute o comando npm install no seu terminal</h3>
 
 <h2>Instruções Script MySql e conexão ao BD</h2>
 
