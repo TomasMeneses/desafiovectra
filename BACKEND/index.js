@@ -3,12 +3,15 @@ const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 const Pessoa = require('./models/Pessoa');
+const db = require('./models/db');
+const Op = db.Sequelize.Op; // Operador do Sequelize
 
 
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false})) 
 app.use(bodyParser.json()); 
+
 
 
 // ROTAS REST
@@ -60,7 +63,9 @@ app.get('/api/pessoacpf/:cpf', (req, res, next) => {
   const {cpf} = req.params; 
   Pessoa.findAll({
       where: {
-        cpf: cpf
+        cpf:{
+          [Op.like]: `%${cpf}%`
+        } 
       }
     }).then((dados) => {
         if(!dados){

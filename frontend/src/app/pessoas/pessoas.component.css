@@ -5,4 +5,12 @@
     margin-bottom: 15px;
     border-radius: 20px;
   }
+
+  .alert-danger {
+    padding: 20px;
+    background-color: #F8D7DA; 
+    color: #721C24;
+    margin-bottom: 15px;
+    border-radius: 20px;
+  }
   
