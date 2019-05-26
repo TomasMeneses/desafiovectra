@@ -1,0 +1,15 @@
+CREATE DATABASE vectra;
+USE vectra;
+DROP TABLE IF EXISTS pessoas; 
+CREATE TABLE pessoas(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    cpf VARCHAR(255) UNIQUE NOT NULL,
+    idade INT NOT NULL,
+    peso DOUBLE NOT NULL,
+    altura DOUBLE NOT NULL,
+    imc DOUBLE NOT NULL,
+    createdAt DATETIME,
+    updatedAt DATETIME
+
+);

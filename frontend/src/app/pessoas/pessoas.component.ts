@@ -40,7 +40,9 @@ export class PessoasComponent implements OnInit {
     if (cpf.length != 11) {
     return false;
   }
-    if ((cpf == '00000000000') || (cpf == '11111111111') || (cpf == '22222222222') || (cpf == '33333333333') || (cpf == '44444444444') || (cpf == '55555555555') || (cpf == '66666666666') || (cpf == '77777777777') || (cpf == '88888888888') || (cpf == '99999999999')) {
+    if ((cpf == '00000000000') || (cpf == '11111111111') || (cpf == '22222222222') ||
+      (cpf == '33333333333') || (cpf == '44444444444') || (cpf == '55555555555') ||
+      (cpf == '66666666666') || (cpf == '77777777777') || (cpf == '88888888888') || (cpf == '99999999999')) {
     return false;
   }
     let numero: number = 0;
@@ -126,12 +128,12 @@ export class PessoasComponent implements OnInit {
   }
 
   listarCpf(pessoacpf) {
+
     if(pessoacpf.cpfBusca === "" || !pessoacpf.cpfBusca) {
       this.listar();
-    }else {
+    } else {
       this.pessoaService.listarCpf(pessoacpf.cpfBusca).subscribe((dados) => {
       this.pessoas = dados;
-      console.log(dados);
       });
     }
   }
@@ -155,9 +157,7 @@ export class PessoasComponent implements OnInit {
     if(confirm('Deseja realmente apagar este usuário?')){
       this.pessoaService.apagar(dados).subscribe((data:any) =>{
         this.listar();
-        console.log('Apagado com Sucesso');
       });
     }
   }
-
 }

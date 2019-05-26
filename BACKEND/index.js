@@ -57,7 +57,7 @@ app.get('/api/pessoa/:id', (req, res, next) => {
       },next);
 });
 
-// Filtro pelo cpf
+// Busca filtrada pelo CPF
 app.get('/api/pessoacpf/:cpf', (req, res, next) => {
     
   const {cpf} = req.params; 
@@ -88,7 +88,7 @@ app.delete('/api/pessoa/:id', (req, res, next) => {
           if(!dados){
             return res.send('Nada foi encontrado');
           }else {
-            res.send('Dados Deletados :(');
+            res.send('Dados Deletados');
           }
       },next);
 });

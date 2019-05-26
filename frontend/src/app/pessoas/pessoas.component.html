@@ -2,7 +2,7 @@
 
   <nav>
     <div class="nav-wrapper blue darken-1">
-      <a href="#" class="brand-logo center">Pessoas Front</a>
+      <a href="#" class="brand-logo center">Desafio Vectra</a>
     </div>
   </nav>
 
@@ -18,7 +18,7 @@
         <input type="number" placeholder="Idade" [ngModel]="pessoa.idade" name="idade">
         <label>Peso ( Em kg )</label>
         <input type="number" placeholder="Peso ( Em kg )" [ngModel]="pessoa.peso" name="peso">
-        <label>Altura (Em metros )</label>
+        <label>Altura ( Em metros )</label>
         <input type="number" placeholder="Altura ( Em metros )" [ngModel]="pessoa.altura" name="altura" (blur)="calculaImc(f.value)">
         <label>IMC</label>
         <input type="number" placeholder="IMC" [ngModel]="pessoa.imc" name="imc" readonly="true">
