@@ -56,4 +56,12 @@
     <li>Execute o comando ng serve no seu terminal</li>
     <li>Acesse a pasta backend com seu terminal</li>
     <li>Execute o comando node app.js</li>
+	<li>Certifique-se de que seu MySql está em execução</li>
 </ol>
+
+<h2>Endereços: </h2>
+
+<ul>
+	<li>http://localhost:4200 (Frontend)</li>
+	<li>http://localhost:3333 (Backend)</li>
+</ul>
